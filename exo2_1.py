@@ -4,10 +4,31 @@
 #
 # Ecrire une fonction calculant le n ième terme de la suite de Fibonacci.
 
-# 0 1 1 2 3 5
+# 0 1 1 2 3 5 8 13 21 34 55
 
 
 def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    elif n >= 2:
+        precedent1 = 0
+        precedent2 = 1
+        terme = 0
+
+        for i in range(2, n+1):
+            terme = precedent1+precedent2
+            precedent1 = precedent2
+            precedent2 = terme
+
+        return terme
+    else:
+        print("Erreur : n doit être >= 0")
+        return -1
+
+
+def fibonacci_recursive(n):
     if n == 0:
         return 0
     elif n == 1:
