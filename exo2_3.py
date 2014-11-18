@@ -7,12 +7,11 @@
 
 
 def recherche(l, x):
-    if x in l:
-        for i in l:
-            if l[i] == x:
-                return i
-    else:
-        return -1
+    for i in range(len(l)):
+        if l[i] == x:
+            return i
+
+    return -1
 
 
 maListe = [1, 2, 3, 4, 5]
